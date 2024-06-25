@@ -8,6 +8,5 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         _enemyMover.Move(_enemySpotter.TrackingPosition);
-        Debug.Log($"Tracking {_enemySpotter.TrackingPosition}");
     }
 }

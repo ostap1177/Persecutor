@@ -15,8 +15,8 @@ public class EnemySpotter : MonoBehaviour
     private void OnTriggerStay(Collider trigger)
     { 
         if (trigger.TryGetComponent(out Player player))
-        { 
-            TrackingPosition = player.transform.position + _distance;
+        {
+            TrackingPosition = player.transform.position - _distance;
         }
     }
 }
