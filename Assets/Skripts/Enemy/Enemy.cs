@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private EnemyMover _enemyMover;
-    [SerializeField] private EnemySpotter _enemySpotter;
+    [SerializeField] private EnemyMover _mover;
+    [SerializeField] private EnemySpotter _spotter;
 
     private void Update()
     {
-        _enemyMover.Move(_enemySpotter.TrackingPosition);
+        _mover.Move(_spotter.TrackingPosition);
     }
 }

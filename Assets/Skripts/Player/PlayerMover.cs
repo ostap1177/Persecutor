@@ -3,8 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMover : MonoBehaviour
 {
-    private const string C_horizontal = "Horizontal";
-    private const string C_vertical = "Vertical";
+    private const string Horizontal = "Horizontal";
+    private const string Vertical = "Vertical";
 
     [SerializeField] private float _speed;
 
@@ -22,7 +22,7 @@ public class PlayerMover : MonoBehaviour
 
     private void Mover()
     {
-        Vector3 playerSpeed = new Vector3(Input.GetAxis(C_horizontal), 0, Input.GetAxis(C_vertical));
+        Vector3 playerSpeed = new Vector3(Input.GetAxis(Horizontal), 0, Input.GetAxis(Vertical));
         playerSpeed *= Time.deltaTime * _speed;
 
         if (_characterController.isGrounded)

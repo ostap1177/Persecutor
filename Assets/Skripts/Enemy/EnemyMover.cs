@@ -5,6 +5,8 @@ public class EnemyMover : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _gravityValue = -1;
+    [SerializeField] private float _distance;
+
 
     private Rigidbody _rigidbody;
     private Transform _transform;
@@ -17,6 +19,13 @@ public class EnemyMover : MonoBehaviour
 
     public void Move(Vector3 position)
     {
-        _rigidbody.velocity = new Vector3(position.x - _transform.position.x, _gravityValue, position.z - _transform.position.z).normalized * _speed * Time.deltaTime;
+        if (Vector3.Distance(position, _transform.position) > _distance)
+        {
+            _rigidbody.velocity = new Vector3(position.x - _transform.position.x, _gravityValue, position.z - _transform.position.z).normalized * _speed * Time.deltaTime;
+        }
+        else 
+        {
+            _rigidbody.velocity = Vector3.zero; 
+        }
     }
 }
